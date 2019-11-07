@@ -33,8 +33,6 @@ if __name__ == "__main__":
     csvwriter.writerow(label)
     for fname in os.listdir("output"):
         print(fname)
-        if fname != "437e2ef0c22ac42c3d639a8aa3da7f75.dot":
-            continue
         try:
             G = read_dot(os.path.join("output", fname))
             nx.draw(G)
@@ -68,5 +66,4 @@ if __name__ == "__main__":
         except:
             data.append(0)
         csvwriter.writerow(data)
-        break
     csvfile.close()
